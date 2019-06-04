@@ -158,9 +158,9 @@ router.get('/success', function(req, res) {
                 return res.sendStatus(500);
             }
             if(response.statusCode == 200 || response.statusCode == 201) {
-                res.writeHead(302,{'Location':("com.herokuapp.androidecorderv2cct://success?token="+req.query.token)});       
+                res.writeHead(302,{'Location':("app://com.herokuapp.androidecorderv2cct://success?token="+req.query.token)});       
             } else {
-                res.writeHead(302,{'Location':("com.herokuapp.androidecorderv2cct://error?token="+req.query.token)});
+                res.writeHead(302,{'Location':("app://com.herokuapp.androidecorderv2cct://error?token="+req.query.token)});
             }      
             res.end();
         });
