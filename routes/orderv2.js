@@ -115,9 +115,9 @@ router.post('/create', function(req, res) {
 });
 
 //coming from web payment sdk
-router.post('/capture/', function(req, res) {
+router.get('/capture', function(req, res) {
     var options = {
-        uri: sanboxUrl + '/v2/checkout/orders/'+req.body.id+'/capture',
+        uri: sanboxUrl + '/v2/checkout/orders/'+req.query.token+'/capture',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
