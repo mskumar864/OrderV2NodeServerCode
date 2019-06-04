@@ -141,8 +141,8 @@ router.post('/capture', function(req, res) {
 });
 
 //coming from ios
-router.get('/success/', function(req, res) {
-    console.log("success");
+router.get('/success', function(req, res) {
+    console.log("success enter");
     var options = {
         uri: sanboxUrl + '/v2/checkout/orders/'+req.query.token+'/capture',
         method: 'POST',
