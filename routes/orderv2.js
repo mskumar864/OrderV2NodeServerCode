@@ -12,7 +12,7 @@ router.post('/create', function(req, res) {
         "intent": "CAPTURE",
         
         "payer": {
-                    "email_address": "inbuyer1@test.com"
+                    "email_address": "usbuyer1@test.com"
         },
         "purchase_units": [
             {
@@ -143,6 +143,7 @@ router.post('/capture', function(req, res) {
 //coming from ios
 router.get('/success', function(req, res) {
     console.log("success enter");
+    var PayerID=req.query.PayerID;
     var options = {
         uri: sanboxUrl + '/v2/checkout/orders/'+req.query.token+'/capture',
         method: 'POST',
@@ -158,9 +159,12 @@ router.get('/success', function(req, res) {
                 return res.sendStatus(500);
             }
             if(response.statusCode == 200 || response.statusCode == 201) {
-                res.writeHead(302,{'Location':("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token)});       
+               // res.writeHead(302,{'Location':("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token+"&PayerID="+PayerID)});       
+                res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token+"&PayerID="+PayerID);
             } else {
-                res.writeHead(302,{'Location':("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+null)});
+                //res.writeHead(302,{'Location':("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+null)});
+                res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+null+"&PayerID="+null);
+           
             }      
             res.end();
         });

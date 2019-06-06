@@ -1,7 +1,7 @@
 var request = require('request');
 var sanboxUrl = 'https://api.sandbox.paypal.com';
-var clientId = "ATwXFTUsC0G1aij_4EK6WEzr_8cd8kfFRHkJxwtNyLQ4yZsEk2p9HXzNNcZ1Xyrc1irtscu2XPIwaSaq"; //india-business
-var secret = "EPUEHk9MmEZlLTIXywriqR0QRnoxQLEZIKkfDhr21fA6g4_mlROfJXHozr8PisDm36xqtteXLKHXAt0Y";
+var clientId = "AcuuDiWgApKeQx7oY6wuGh2kbAIzy8B1NrruTzVl_vn3Dqv7a-EYGKlHRMb70fjc3eX3EP5rlM3VUp8g"; //india-business
+var secret = "ELxGTdUhk3gGuO7nFv1sDF5waqAsUcKDoA0djtfIYgGVIXEjealGQvq93-vdWsc8rvHnNVOfeNdvngWE";
 var basicAuth = new Buffer(clientId+":"+secret).toString('base64') ;
 
 var initialize = function(){  
