@@ -11,9 +11,7 @@ router.post('/create', function(req, res) {
     req.body={
         "intent": "CAPTURE",
         
-        "payer": {
-                    "email_address": "usbuyer1@test.com"
-        },
+  
         "purchase_units": [
             {
                 "reference_id": "ref_12311124",
