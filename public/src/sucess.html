@@ -41,6 +41,11 @@
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script>
+        var url_string =  window.location.href;
+            var url = new URL(url_string);
+            var token = url.searchParams.get("token");
+            var PayerID=url.searchParams.get("PayerID");
+
 
         $( document ).ready(function() {
           document.querySelector('meta[name="url"]').setAttribute("url", "app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+token+"&PayerID="+PayerID);
@@ -52,11 +57,7 @@
   
         function RedirectSuccess(){
 
-            var url_string =  window.location.href;
-            var url = new URL(url_string);
-            var token = url.searchParams.get("token");
-            var PayerID=url.searchParams.get("PayerID");
-
+          
           window.location = "app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+token+"&PayerID="+PayerID;
           
         }
