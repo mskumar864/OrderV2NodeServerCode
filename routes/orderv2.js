@@ -162,12 +162,12 @@ router.get('/success', function(req, res) {
                 return res.sendStatus(500);
             }
             if(response.statusCode == 200 || response.statusCode == 201) {
-               // res.writeHead(302,{'Location':("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token+"&PayerID="+PayerID)});       
-               // res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token+"&PayerID="+PayerID);
+                //Non-3DS below code can use used for non 3DS countries and directly deeplink to the app
+                // res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token+"&PayerID="+PayerID);
+              
+                //INR-intermidate page for INR currency
                res.redirect('/sucess.html?token='+req.query.token+"&PayerID="+PayerID);
                    } else {
-                //res.writeHead(302,{'Location':("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+null)});
-                //res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+null+"&PayerID="+null);
                
                 res.redirect('/success.html?token='+""+"&PayerID="+"");   
             }      
