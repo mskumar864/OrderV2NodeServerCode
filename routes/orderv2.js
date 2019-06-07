@@ -164,12 +164,12 @@ router.get('/success', function(req, res) {
             if(response.statusCode == 200 || response.statusCode == 201) {
                // res.writeHead(302,{'Location':("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token+"&PayerID="+PayerID)});       
                // res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token+"&PayerID="+PayerID);
-               res.redirect('/sucess.html?id='+req.query.token+"&PayerID="+PayerID);
+               res.redirect('/sucess.html?token='+req.query.token+"&PayerID="+PayerID);
                    } else {
                 //res.writeHead(302,{'Location':("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+null)});
                 //res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+null+"&PayerID="+null);
                
-                res.redirect('/success.html?id='+""+"&PayerID="+"");   
+                res.redirect('/success.html?token='+""+"&PayerID="+"");   
             }      
             res.end();
         });
