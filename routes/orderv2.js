@@ -117,7 +117,7 @@ router.post('/create', function(req, res) {
     });
 });
 
-//coming from web payment sdk
+//ignore this---sample codecoming from web payment sdk-- sample code
 router.post('/capture', function(req, res) {
     var options = {
         uri: sanboxUrl + '/v2/checkout/orders/'+req.body.id+'/capture',
@@ -143,7 +143,7 @@ router.post('/capture', function(req, res) {
     });
 });
 
-//coming from ios
+//coming from android
 router.get('/success', function(req, res) {
     console.log("success enter");
     var PayerID=req.query.PayerID;
