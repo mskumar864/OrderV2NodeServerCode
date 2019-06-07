@@ -83,7 +83,12 @@ router.post('/create', function(req, res) {
         ],
         "application_context": {
             "brand_name":"flipkart",
+
+            
+            
             "return_url": "https://pcp-orderv2.herokuapp.com/orderv2/success",
+
+            
             "cancel_url": "https://pcp-orderv2.herokuapp.com/orderv2/success"
         }
     };
@@ -158,11 +163,13 @@ router.get('/success', function(req, res) {
             }
             if(response.statusCode == 200 || response.statusCode == 201) {
                // res.writeHead(302,{'Location':("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token+"&PayerID="+PayerID)});       
-                res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token+"&PayerID="+PayerID);
-            } else {
+               // res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+req.query.token+"&PayerID="+PayerID);
+               res.redirect('/success.html?id='+req.query.token+"&PayerID="+PayerID);
+                   } else {
                 //res.writeHead(302,{'Location':("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+null)});
-                res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+null+"&PayerID="+null);
-           
+                //res.redirect("app://com.herokuapp.apmanative.androidecorderv2cct://success?token="+null+"&PayerID="+null);
+               
+                res.redirect('/success.html?id='+""+"&PayerID="+"");   
             }      
             res.end();
         });
