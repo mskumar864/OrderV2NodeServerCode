@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var orderV2route=require('./routes/orderv2')
 //var captureRouter=require("./routes/captureOrder")
-
+var cors = require("cors");
 var app = express();
 
 // view engine setup
@@ -20,6 +20,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public/src')));
+
+
+app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
